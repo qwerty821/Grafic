@@ -84,13 +84,13 @@ class data {
                      vs.Add(tuples[i].Item1);
             }
         }
+
         return vs;
     }
 
     private int numar(double x) {
         return (int)(x * 2);
     }
-
     public void grafic() {
       
         for (double i = maxy + 1; i >= 0; i -= 0.5) {
@@ -105,7 +105,6 @@ class data {
                         Console.Write((char)4 + " ");
                         linie[numar(j)] = 1;
                         k++;
-                       
                     }  else if (k < num.Count){
                         Console.ForegroundColor = ConsoleColor.Red;
                         if (linie[numar(j)] == 1) {
@@ -121,7 +120,6 @@ class data {
                     } else {  
                         Console.Write(". ");
                     }
-                    
                 }
                 Console.Write("\n");
             } else {
@@ -161,12 +159,14 @@ namespace ConsApp
             Console.Write("nr = ");
             int n = Convert.ToInt32(Console.ReadLine());
             data d = new data(n);
+            
             d.citire();
             Console.Clear();
+            
             d.afisare();
             d.grafic();
+            
             Console.WriteLine("\n");
         }
-
     }
 }
