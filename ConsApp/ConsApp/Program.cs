@@ -167,6 +167,7 @@ namespace ConsApp
             d.grafic();
             
             Console.WriteLine("\n");
+            Console.ReadKey();
         }
     }
 }
