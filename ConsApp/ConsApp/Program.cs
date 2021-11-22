@@ -38,15 +38,6 @@ class data {
         rotungire();
     }
 
-     
-    /*
-     *  23,6556 * 10 = 236
-     *  236 => 23,5
-     *  
-     *
-     */
-
-
     private double vir(double x) {
         double rez  = 0;
         int c = (int)(x * 10);
@@ -100,30 +91,16 @@ class data {
         return (int)(x * 2);
     }
 
-    private bool este_x(double x) {
-        for (int i = 0; i < nr; i++) {
-            if (tuples[i].Item2 == x)
-                return true;
-        }
-        return false;
-    }
-
     public void grafic() {
       
-        for (double i = maxy + 5; i >= 0; i -= 0.5) {
+        for (double i = maxy + 1; i >= 0; i -= 0.5) {
             Console.Write(i + "\t|");
             List<double> num = caut(i);
-           
-          
-            //for (int j = 0; j < num.Count; j++) {
-            //    Console.Write("%" + num[j]);
-            //}
-            //Console.Write("\n");
             num.Sort();
             int n = 0;
             if (num.Count > 0) {
                 int k = 0;
-                for (double j = 0; j <= maxx + 5; j+= 0.5, n++) {
+                for (double j = 0; j <= maxx + 1; j+= 0.5, n++) {
                     if(k < num.Count && num[k] == j) {
                         Console.Write((char)4 + " ");
                         linie[numar(j)] = 1;
@@ -148,7 +125,7 @@ class data {
                 }
                 Console.Write("\n");
             } else {
-                for (double j = 0; j <= maxx + 5; j += 0.5) {
+                for (double j = 0; j <= maxx + 1; j += 0.5) {
                     if (linie[numar(j)] == 1) {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.Write("| ");
@@ -161,20 +138,17 @@ class data {
             }
         }
         Console.Write("\t");
-        for (int i = 0; i <= (int)(maxx + 5); i++) {
-            Console.Write("--");
+        for (int i = 0; i <= (int)(maxx + 1); i++) {
+            Console.Write("----");
         }
         Console.Write("\n\t ");
-        for (int i = 0; i <= (int)(maxx + 5); i++) {
+        for (int i = 0; i <= (int)(maxx + 1); i++) {
             Console.Write(i + "   ");
         }
         Console.Write("\n\t  ");
-        for (int i = 0; i <= (int)(maxx + 5); i++) {
+        for (int i = 0; i <= (int)(maxx + 1); i++) {
             Console.Write(i + ",5 ");
         }
-        //for (int i = 0; i < 10; i++) {
-        //    Console.Write(linie[i] + " ");
-        //}
     }
 } 
 
@@ -192,9 +166,6 @@ namespace ConsApp
             d.afisare();
             d.grafic();
             Console.WriteLine("\n");
-            //for (int i = 0; i < Char.MaxValue;i++) {
-            //    Console.WriteLine($"{i} = {(char)i}");
-            //}
         }
 
     }
