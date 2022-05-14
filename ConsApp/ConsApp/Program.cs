@@ -22,7 +22,7 @@ class data {
         }
     }
     public void citire() {
-        Console.WriteLine("cordonatele reale se scriu cu virgula");
+        Console.WriteLine("coordonatele reale se scriu cu virgula");
         for (int i = 0; i < nr; i++) {
             double x, y;
             Console.WriteLine(i + 1);
